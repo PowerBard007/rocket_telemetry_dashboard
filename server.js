@@ -9,14 +9,14 @@ const app=express();
 const server=http.createServer(app);
 const io=new Server(server);
 
-// Database setup
+//creating the database
 const db = new sqlite3.Database("telemetry.db", (err) => 
 {
   if (err) return console.error("DB Connection Error:", err.message);
   console.log("Connected to the SQLite DataBase");
 });
 
-db.run(`CREATE TABLE IF NOT EXISTS telemetry (
+db.run(`CREATE TABLE IF NOT EXISTS telemetry(
   timestamp TEXT PRIMARY KEY,
   altitude REAL,
   acceleration REAL,
@@ -84,11 +84,11 @@ app.get("/export", (req, res) => {
       });
     }
   );
-});
+});//this is fromt he get request from opening /export and thus helsp to load the database values into a csv file and then downloads it automaticaaly when it is done
 
-// Serve index.html
+// settin up we server with index.html
 app.get("/",(req,res)=> 
-{res.sendFile(path.join(__dirname, "index.html"));});
+{res.sendFile(path.join(__dirname, "index.html"));});// when user is in url it loads index.html
 
 server.listen(5000,()=>
 {console.log(`Rocket Telemetry running on http://localhost:5000`);});
