@@ -17,8 +17,7 @@ const db = new sqlite3.Database("telemetry.db", (err) =>
 });
 
 db.run(`CREATE TABLE IF NOT EXISTS telemetry (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  timestamp TEXT,
+  timestamp TEXT PRIMARY KEY,
   altitude REAL,
   acceleration REAL,
   x REAL,
@@ -78,7 +77,7 @@ app.get("/export", (req, res) => {
       writeStream.write(line);
     },
     () => {
-      writeStream.end(() => {
+      writeStream.end(()=>{
         res.download(filePath, "telemetry_export.csv", (err) => {
           if (err) console.error("Download error:", err);
         });
@@ -89,9 +88,7 @@ app.get("/export", (req, res) => {
 
 // Serve index.html
 app.get("/",(req,res)=> 
-{
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+{res.sendFile(path.join(__dirname, "index.html"));});
 
 server.listen(5000,()=>
 {console.log(`Rocket Telemetry running on http://localhost:5000`);});

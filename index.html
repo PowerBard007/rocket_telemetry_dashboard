@@ -7,90 +7,90 @@
         <link rel="stylesheet" href="style.css"/>
         <link rel="icon" href="assets/icon.png"/>
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  </head>
+    </head>
 
-  <body>
-    <div class="dashboard">
-      <h1 class="title">TELEMETRY DASHBOARD</h1>
+    <body>
+      <div class="dashboard">
+        <h1 class="title">TELEMETRY DASHBOARD</h1>
+        
+        <!--this one is for all the graphs and location to be displayed-->
+        <div class="grid-container">
+          <div class="tile">
+            <h2>ALTITUDE</h2>
+            <div class="value" id="altitude">0 m</div>
+            <canvas id="altitude-chart"></canvas>
+          </div>
 
-      <div class="grid-container">
-        <div class="tile">
-          <h2>ALTITUDE</h2>
-          <div class="value" id="altitude">0 m</div>
-          <canvas id="altitude-chart"></canvas>
-        </div>
+          <div class="tile">
+            <h2>ACCELERATION</h2>
+            <div class="value" id="acceleration">0 m/s²</div>
+            <canvas id="acceleration-chart"></canvas>
+          </div>
 
-        <div class="tile">
-          <h2>ACCELERATION</h2>
-          <div class="value" id="acceleration">0 m/s²</div>
-          <canvas id="acceleration-chart"></canvas>
-        </div>
+          <div class="tile map-tile">
+            <h2>LOCATION</h2>
+            <div id="location-map"></div>
+          </div>
 
-        <div class="tile map-tile">
-          <h2>LOCATION</h2>
-          <div id="location-map"></div>
-        </div>
+          <div class="tile">
+            <h2>X-ORIENTATION</h2>
+            <div class="value" id="x-orientation">0</div>
+            <canvas id="x-chart"></canvas>
+         </div>
 
-        <div class="tile">
-          <h2>X-ORIENTATION</h2>
-          <div class="value" id="x-orientation">0</div>
-          <canvas id="x-chart"></canvas>
-        </div>
+          <div class="tile">
+            <h2>Y-ORIENTATION</h2>
+            <div class="value" id="y-orientation">0</div>
+            <canvas id="y-chart"></canvas>
+          </div>
 
-        <div class="tile">
-          <h2>Y-ORIENTATION</h2>
-          <div class="value" id="y-orientation">0</div>
-          <canvas id="y-chart"></canvas>
-        </div>
+          <div class="tile">
+            <h2>Z-ORIENTATION</h2>
+            <div class="value" id="z-orientation">0</div>
+            <canvas id="z-chart"></canvas>
+          </div>
 
-        <div class="tile">
-          <h2>Z-ORIENTATION</h2>
-          <div class="value" id="z-orientation">0</div>
-          <canvas id="z-chart"></canvas>
-        </div>
+          <div class="tile">
+            <h2>TEMPERATURE</h2>
+            <div class="value" id="temperature">0</div>
+            <canvas id="temperature-chart"></canvas>
+          </div>
 
-        <div class="tile">
-          <h2>TEMPERATURE</h2>
-          <div class="value" id="temperature">0</div>
-          <canvas id="temperature-chart"></canvas>
-        </div>
-
-        <div class="tile">
-          <h2>PRESSURE</h2>
-          <div class="value" id="pressure">0</div>
-          <canvas id="pressure-chart"></canvas>
-        </div>
-      </div>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="status-section">
-          <h2>STATUS</h2>
-          <p id="connection">Connection > Checking...</p>
-          <p id="time">Time > Waiting...</p>
-
-          <div class="transmit-section">
-            <p>TELEMETRY</p>
-            <button id="export-btn">EXPORT CSV</button>
+          <div class="tile">
+            <h2>PRESSURE</h2>
+            <div class="value" id="pressure">0</div>
+            <canvas id="pressure-chart"></canvas>
           </div>
         </div>
 
-        <div class="go-nogo">
-          <h3>Go/No Go</h3>
-          <ul>
-            <li>Telemetry : <span id="telemetry-status" class="status no-go">NO GO</span></li>
-            <li>Avionics : <span id="avionics-status" class="status no-go">NO GO</span></li>
-            <li>Tracking : <span id="tracking-status" class="status no-go">NO GO</span></li>
-            <li>Propulsion : <span id="propulsion-status" class="status no-go">NO GO</span></li>
-          </ul>
+        <div class="sidebar">
+          <div class="status-section">
+            <h2>STATUS</h2>
+            <p id="connection">Connection > Checking...</p>
+            <p id="time">Time > Waiting...</p>
+
+            <div class="transmit-section">
+              <p>TELEMETRY</p>
+              <button id="export-btn">EXPORT CSV</button>
+            </div>
+          </div>
+
+          <div class="go-nogo">
+            <h3>Go/No Go</h3>
+            <ul>
+              <li>Telemetry : <span id="telemetry-status" class="status no-go">NO GO</span></li>
+              <li>Avionics : <span id="avionics-status" class="status no-go">NO GO</span></li>
+              <li>Tracking : <span id="tracking-status" class="status no-go">NO GO</span></li>
+              <li>Propulsion : <span id="propulsion-status" class="status no-go">NO GO</span></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- JS Scripts -->
-    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="script.js"></script>
-  </body>
+        <!--loading the js libraries and js script -->
+        <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>

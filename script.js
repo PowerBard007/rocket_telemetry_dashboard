@@ -1,16 +1,15 @@
-// script.js
 const socket = io();
 
-// Chart setup placeholders
-const charts = {};
-let chartConfigs = [
-  { id: "altitude", label: "Altitude (m)", color: "#00ffff" },
-  { id: "acceleration", label: "Acceleration (m/s²)", color: "#00ff99" },
-  { id: "x", label: "X Orientation", color: "#ff6666" },
-  { id: "y", label: "Y Orientation", color: "#ffcc66" },
-  { id: "z", label: "Z Orientation", color: "#6699ff" },
-  { id: "temperature", label: "Temperature (°C)", color: "#ff4da6" },
-  { id: "pressure", label: "Pressure (hPa)", color: "#66ffcc" },
+//
+const charts={};
+let chartConfigs=[
+  { id:"altitude", label:"Altitude(m)", color:"#00ffff" },
+  { id:"acceleration", label:"Acceleration(m/s²)", color:"#00ff99" },
+  { id:"x", label:"X-Orientation", color:"#ff6666" },
+  { id:"y", label:"Y-Orientation", color:"#ffcc66" },
+  { id:"z", label:"Z-Orientation", color:"#6699ff" },
+  { id:"temperature", label:"Temperature(°C)", color:"#ff4da6" },
+  { id:"pressure", label:"Pressure(hPa)", color:"#66ffcc" }
 ];
 
 chartConfigs.forEach(({ id, label, color }) => {
@@ -36,7 +35,7 @@ chartConfigs.forEach(({ id, label, color }) => {
   });
 });
 
-// Map init
+//map
 let map = L.map("location-map").setView([11.0625, 76.9815], 15);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; OpenStreetMap contributors'

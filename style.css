@@ -1,29 +1,27 @@
-/* style.css */
-
-body {
+body{
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0a0a0a;
   color: #fff;
 }
 
-a {
+a{
   color: #4caf50;
   text-decoration: none;
 }
 
-a:hover {
+a:hover{
   text-decoration: underline;
 }
 
-.dashboard {
+.dashboard{
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   gap: 20px;
 }
 
-.title {
+.title{
   width: 100%;
   text-align: center;
   font-size: 2em;
@@ -31,43 +29,43 @@ a:hover {
   color: #00ffcc;
 }
 
-.grid-container {
+.grid-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   flex: 1;
 }
 
-.tile {
+.tile{
   background-color: #1f1f1f;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
 }
 
-.tile h2 {
+.tile h2{
   font-size: 1.1em;
   margin-bottom: 10px;
 }
 
-.value {
+.value{
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-canvas {
+canvas{
   width: 100% !important;
   height: 150px !important;
 }
 
-#location-map {
+#location-map{
   height: 250px;
   width: 100%;
   border-radius: 10px;
   background-color: #333;
 }
 
-.sidebar {
+.sidebar{
   width: 280px;
   background-color: #141414;
   padding: 20px;
@@ -75,26 +73,26 @@ canvas {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.status-section {
+.status-section{
   margin-bottom: 20px;
 }
 
-.status-section h2 {
+.status-section h2{
   font-size: 1.2em;
   color: #ffcc00;
   margin-bottom: 10px;
 }
 
-.status-section p {
+.status-section p{
   margin: 6px 0;
   font-size: 0.95em;
 }
 
-.transmit-section {
+.transmit-section{
   margin-top: 15px;
 }
 
-.transmit-section button {
+.transmit-section button{
   display: block;
   width: 100%;
   margin-top: 10px;
@@ -108,30 +106,30 @@ canvas {
   transition: background 0.3s;
 }
 
-.transmit-section button:hover {
+.transmit-section button:hover{
   background-color: #00b386;
 }
 
-.go-nogo h3 {
+.go-nogo h3{
   margin-top: 20px;
   font-size: 1.2em;
   color: #ff6666;
 }
 
-.go-nogo ul {
+.go-nogo ul{
   list-style: none;
   padding-left: 0;
   font-size: 0.95em;
 }
 
-.go-nogo li {
+.go-nogo li{
   margin: 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.status {
+.status{
   padding: 3px 10px;
   border-radius: 12px;
   font-weight: bold;
@@ -139,12 +137,12 @@ canvas {
   text-transform: uppercase;
 }
 
-.status.go {
+.status.go{
   background-color: #1eaa1e;
   color: #fff;
 }
 
-.status.no-go {
+.status.no-go{
   background-color: #b30000;
   color: #fff;
 }
